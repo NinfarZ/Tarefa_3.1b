@@ -20,11 +20,12 @@ Cada ficheiro draw.io tem 10 páginas: os 5 ecrãs abaixo, em browser e mobile.
 | Especialistas · listagem (pesquisa, filtro por família, ordenação por nome) | `/admin/experts` |
 | Especialistas · formulário (o de edição é igual, com os dados preenchidos) | `/admin/experts/add` |
 
-As imagens em `mockups/` mostram as duas listagens sem ser preciso abrir o draw.io.
+As imagens em `wireframes/` e `mockups/` mostram as duas listagens (browser e mobile) sem ser preciso abrir o draw.io.
 
-| Patrocinadores | Especialistas |
-|---|---|
-| ![Listagem de patrocinadores](mockups/sponsors_listagem_desktop.png) | ![Listagem de especialistas](mockups/experts_listagem_desktop.png) |
+| | Patrocinadores | Especialistas |
+|---|---|---|
+| Wireframe | ![Wireframe da listagem de patrocinadores](wireframes/sponsors_listagem_desktop.png) | ![Wireframe da listagem de especialistas](wireframes/experts_listagem_desktop.png) |
+| Mockup | ![Mockup da listagem de patrocinadores](mockups/sponsors_listagem_desktop.png) | ![Mockup da listagem de especialistas](mockups/experts_listagem_desktop.png) |
 
 ## Informação de cada entidade
 
