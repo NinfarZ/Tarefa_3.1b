@@ -31,7 +31,6 @@
 import { FETCH_EXPERTS, EDIT_EXPERT } from "@/store/experts/expert.constants";
 import HeaderPage from "@/components/HeaderPage.vue";
 import ExpertForm from "@/components/ExpertForm.vue";
-import router from "@/router";
 import { mapGetters } from "vuex";
 
 export default {
@@ -53,7 +52,7 @@ export default {
       const expert = this.getExpertsById(this.$route.params.expertId);
       if (!expert) {
         this.$alert("Especialista não encontrado.", "Erro", "error");
-        router.push({ name: "listExperts" });
+        this.$router.push({ name: "listExperts" });
         return;
       }
       this.expert = JSON.parse(JSON.stringify(expert));
@@ -62,7 +61,7 @@ export default {
       this.$store.dispatch(`expert/${EDIT_EXPERT}`, this.$data.expert).then(
         () => {
           this.$alert(this.getMessage, "Especialista atualizado!", "success");
-          router.push({ name: "listExperts" });
+          this.$router.push({ name: "listExperts" });
         },
         err => {
           this.$alert(`${err.message}`, "Erro", "error");

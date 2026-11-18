@@ -31,7 +31,6 @@
 import { ADD_EXPERT } from "@/store/experts/expert.constants";
 import HeaderPage from "@/components/HeaderPage.vue";
 import ExpertForm from "@/components/ExpertForm.vue";
-import router from "@/router";
 import { mapGetters } from "vuex";
 
 export default {
@@ -62,7 +61,7 @@ export default {
       this.$store.dispatch(`expert/${ADD_EXPERT}`, this.$data.expert).then(
         () => {
           this.$alert(this.getMessage, "Especialista adicionado!", "success");
-          router.push({ name: "listExperts" });
+          this.$router.push({ name: "listExperts" });
         },
         err => {
           this.$alert(`${err.message}`, "Erro", "error");

@@ -31,7 +31,6 @@
 import { ADD_SPONSOR } from "@/store/sponsors/sponsor.constants";
 import HeaderPage from "@/components/HeaderPage.vue";
 import SponsorForm from "@/components/SponsorForm.vue";
-import router from "@/router";
 import { mapGetters } from "vuex";
 
 export default {
@@ -61,7 +60,7 @@ export default {
       this.$store.dispatch(`sponsor/${ADD_SPONSOR}`, this.$data.sponsor).then(
         () => {
           this.$alert(this.getMessage, "Patrocinador adicionado!", "success");
-          router.push({ name: "listSponsors" });
+          this.$router.push({ name: "listSponsors" });
         },
         err => {
           this.$alert(`${err.message}`, "Erro", "error");

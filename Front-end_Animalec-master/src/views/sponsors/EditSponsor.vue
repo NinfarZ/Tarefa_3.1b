@@ -34,7 +34,6 @@ import {
 } from "@/store/sponsors/sponsor.constants";
 import HeaderPage from "@/components/HeaderPage.vue";
 import SponsorForm from "@/components/SponsorForm.vue";
-import router from "@/router";
 import { mapGetters } from "vuex";
 
 export default {
@@ -56,7 +55,7 @@ export default {
       const sponsor = this.getSponsorsById(this.$route.params.sponsorId);
       if (!sponsor) {
         this.$alert("Patrocinador não encontrado.", "Erro", "error");
-        router.push({ name: "listSponsors" });
+        this.$router.push({ name: "listSponsors" });
         return;
       }
       this.sponsor = JSON.parse(JSON.stringify(sponsor));
@@ -65,7 +64,7 @@ export default {
       this.$store.dispatch(`sponsor/${EDIT_SPONSOR}`, this.$data.sponsor).then(
         () => {
           this.$alert(this.getMessage, "Patrocinador atualizado!", "success");
-          router.push({ name: "listSponsors" });
+          this.$router.push({ name: "listSponsors" });
         },
         err => {
           this.$alert(`${err.message}`, "Erro", "error");
